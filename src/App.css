@@ -22,11 +22,11 @@
 .App-header {
   padding: 25px 25px 0px;
 }
-
+/*
 @keyframes snow {
   0% { background-position: 0px 0px, 0px 0px, 0px 0px; }
   100% { background-position: 500px 500px, 100px 200px, -100px 150px; }
-}
+}*/
 
 
 @keyframes App-logo-spin {
@@ -57,4 +57,5 @@
   margin: 10px;
   padding: 5px;
   flex-grow: 1;
+  width: 300px;
 }

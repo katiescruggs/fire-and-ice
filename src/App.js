@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { CardList } from './CardList.js';
+import { Loading } from './Loading.js';
 
 class App extends Component {
   constructor() {
@@ -16,14 +17,9 @@ class App extends Component {
   componentDidMount() {
     fetch('http://localhost:3001/api/v1/houses')
     .then((result) => result.json())
-    .then((houses) => this.setState({ houses: houses, loading: false }))
+    .then((houses) => this.setState({ houses: houses, loading: false }) );
   }
 
-  loading(){
-    return (
-      <img id='wolf' src='/wolf.gif' />
-    )
-  }
   render() {
     const { loading, houses } = this.state
     return (
@@ -33,9 +29,7 @@ class App extends Component {
           <h2>Welcome to Westeros</h2>
         </div>
         <div className='Display-info'>
-          {
-            loading ? this.loading() : <CardList array={houses} />
-          }
+          { loading ? <Loading /> : <CardList array={houses} /> }
         </div>
       </div>
     );
