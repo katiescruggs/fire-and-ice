@@ -9,7 +9,6 @@ class App extends Component {
     super();
     this.state = {
       loading: true,
-      location: 'house',
       houses: []
     };
   }
@@ -20,8 +19,37 @@ class App extends Component {
     .then((houses) => this.setState({ houses: houses, loading: false }) );
   }
 
+  findHouse(name) {
+    return this.state.houses.find((house) => house.name === name);
+  }
+
+  handleLocation(name) {
+    const house = this.findHouse(name);
+
+    if(house.members) return null;
+
+    house.members = [];
+    const promises = house.swornMembers.map((url) => {
+      return fetch('http://localhost:3001/api/v1/character', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({url: url})
+      })
+      .then((result) => result.json())
+      .catch((err) => console.log(err))
+    });
+
+    Promise.all(promises).then((array) => {
+      array.forEach((char) => {
+        house.members[house.members.length] = { name: char.name, died: char.died }
+      });
+      this.setState({ houses: this.state.houses })
+    });
+  }
+
   render() {
     const { loading, houses } = this.state
+
     return (
       <div className='App'>
         <div className='App-header'>
@@ -29,17 +57,11 @@ class App extends Component {
           <h2>Welcome to Westeros</h2>
         </div>
         <div className='Display-info'>
-          { loading ? <Loading /> : <CardList array={houses} /> }
+          { loading ? <Loading /> : <CardList array={houses} showMore={this.handleLocation.bind(this)}/> }
         </div>
       </div>
     );
   }
 }
-
-// OOhkay. This is a website for GOT nerds, pretty sweet right!?
-// We got some sweet css but lets work on getting this app fully functional.
-// First thing we want to do is fetch some info for us to display.
-// Mmmm... lets grab all the important houses in Westeros from --> http://localhost:3001/api/v1/houses.
-// Once we've grabbed our data lets go ahead and make a house reducer and an action to add them!
 
 export default App;
