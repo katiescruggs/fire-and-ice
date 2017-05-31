@@ -1,34 +1,26 @@
 .App {
   text-align: center;
+  font-family: Androgyne;
+  background-image: url('http://www.wearewebstars.dk/codepen/img/s1.png'), url('http://www.wearewebstars.dk/codepen/img//s2.png'), url('http://www.wearewebstars.dk/codepen/img//s3.png');
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+  animation: snow 10s linear infinite;
 }
 
 .App-logo {
-  transition: all 4s ease-in-out;
-  height: 80px;
+  transition: all 2s ease-in-out;
+  height: 180px;
 }
 
 .App-logo:hover {
-  transform: scale(1.5,1.5);
+  transform: scale(1.2,1.2);
 }
 
-/*.App-header {
-  height: 150px;
-  padding: 20px;
-  color: white;
-}*/
-
 .App-header {
-  padding: 25px;
-  background-color: #555;
-	font-family: Androgyne;
-	background-image: url('http://www.wearewebstars.dk/codepen/img/s1.png'), url('http://www.wearewebstars.dk/codepen/img//s2.png'), url('http://www.wearewebstars.dk/codepen/img//s3.png');
-  position: absolute;
-	left: 0;
-  top: 0;
-  height: 100%;
-	width: 100%;
-	z-index: 1;
-	animation: snow 10s linear infinite;
+  padding: 25px 25px 0px;
 }
 
 @keyframes snow {
@@ -39,4 +31,30 @@
 
 @keyframes App-logo-spin {
   transform: scale(1.5,1.5);
+}
+
+#wolf {
+  height: 200px;
+}
+
+.Display-info {
+  margin: 50px;
+  background-color: #222;
+  padding: 40px;
+  font: white;
+  border-radius: 10px;
+}
+
+.Container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Card {
+  border-radius: 10px;
+  border-color: black;
+  border-style: solid;
+  margin: 10px;
+  padding: 5px;
+  flex-grow: 1;
 }

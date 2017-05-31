@@ -1,32 +1,42 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { CardList } from './CardList.js';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       loading: true,
-      location: 'house'
+      location: 'house',
+      houses: []
     };
   }
 
   componentDidMount() {
     fetch('http://localhost:3001/api/v1/houses')
     .then((result) => result.json())
-    .then((houses) => console.log(houses))
+    .then((houses) => this.setState({ houses: houses, loading: false }))
   }
 
-  render() {
+  loading(){
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+      <img id='wolf' src='/wolf.gif' />
+    )
+  }
+  render() {
+    const { loading, houses } = this.state
+    return (
+      <div className='App'>
+        <div className='App-header'>
+          <img src={logo} className='App-logo' alt='logo' />
           <h2>Welcome to Westeros</h2>
         </div>
-        <p className="App-intro">
-          
-        </p>
+        <div className='Display-info'>
+          {
+            loading ? this.loading() : <CardList array={houses} />
+          }
+        </div>
       </div>
     );
   }
