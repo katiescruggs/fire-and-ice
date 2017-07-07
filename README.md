@@ -12,7 +12,7 @@
 
 ### Building this website:
 
-![GOT](http://recordit.co/X5H0FRbNXO/gif/notify)
+View a recording of it here -> http://recordit.co/X5H0FRbNXO/gif/notify
 
 OOhkay. This is a website for GOT nerds, pretty sweet right!?
 We got some sweet css but lets work on getting this app fully functional.
