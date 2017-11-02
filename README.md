@@ -22,7 +22,7 @@ Once you've populated your redux store with your data you are going to want to d
 Things to display:
 `name, founded, seats, titles, coatOfArms, ancestralWeapons, words`
 
-Nice work! You basically have a full website. This might be a good time to start testing your action, reducers, and components.
+Nice work! You basically have a full website. This might be a good time to start testing your actions, reducers, and components.
 
 ##### Iteration 2:
 
