@@ -3,14 +3,13 @@ import PropTypes, { shape, func, string } from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
-import { fakeAction } from '../../actions';
+import { fetchHouses } from '../../helpers/apiCalls';
+import { fakeAction, setHouses } from '../../actions';
 class App extends Component {
 
   async componentDidMount() {
-    const initialFetch = await fetch('http://localhost:3001/api/v1/houses');
-    const data = await initialFetch.json();
-
-    console.log(data);
+    const houses = await fetchHouses();
+    this.props.setHouses(houses);
   }
 
   render() {
@@ -37,7 +36,8 @@ App.propTypes = {
 };
 
 const mapStateToProps = ({ fake }) => ({ fake });
-const mapDispatchToProps = dispatch => ({ fakeAction:
-  () => dispatch(fakeAction())
+const mapDispatchToProps = dispatch => ({ 
+  fakeAction: () => dispatch(fakeAction()),
+  setHouses: (houses) => dispatch(setHouses(houses))
 });
 export default connect(mapStateToProps, mapDispatchToProps)(App);
