@@ -5,6 +5,7 @@ import './App.css';
 import { connect } from 'react-redux';
 import { fetchHouses } from '../../helpers/apiCalls';
 import { fakeAction, setHouses } from '../../actions';
+import CardContainer from '../CardContainer/CardContainer';
 class App extends Component {
 
   async componentDidMount() {
@@ -24,6 +25,15 @@ class App extends Component {
           }}> FAKE ACTION</button>
         </div>
         <div className='Display-info'>
+          
+        {this.props.houses.length === 0 && 
+          <img src='../../wolf.gif' />
+        }
+
+        {this.props.houses.length > 0 &&
+          <CardContainer />
+        }
+        
         </div>
       </div>
     );
@@ -35,7 +45,7 @@ App.propTypes = {
   fakeAction: func.isRequired
 };
 
-const mapStateToProps = ({ fake }) => ({ fake });
+const mapStateToProps = ({ fake, houses }) => ({ fake, houses });
 const mapDispatchToProps = dispatch => ({ 
   fakeAction: () => dispatch(fakeAction()),
   setHouses: (houses) => dispatch(setHouses(houses))
