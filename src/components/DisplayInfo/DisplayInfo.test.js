@@ -8,15 +8,25 @@ describe('DisplayInfo Container', () => {
     const mockHouses = ['an', 'array', 'of', 'houses'];
     const mockSetHouses = jest.fn();
 
+    const mockMembers = {
+      membersOne: ['array', 'of', 'member', 'names'],
+      membersTwo: ['array', 'of', 'member', 'names']
+    };
+    const mockSetMembers = jest.fn();
+
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-      json: () => Promise.resolve({
-        houses: ['array', 'of', 'houses']
-      })
+      json: () => Promise.resolve(
+        [{name: 'NAME', swornMembers: ['sworn', 'members']}]
+      )
     }));
 
     beforeEach(() => {
       displayInfo = shallow(
-        <DisplayInfo houses={mockHouses} setHouses={mockSetHouses} />);
+        <DisplayInfo 
+          houses={mockHouses}
+          members={mockMembers} 
+          setHouses={mockSetHouses}
+          setMembers={mockSetMembers} />);
     });
 
     it('should exist', () => {
@@ -27,19 +37,15 @@ describe('DisplayInfo Container', () => {
       expect(displayInfo).toMatchSnapshot();
     });
 
-    it('should display connected card container if there are houses', () => {
-      displayInfo = shallow(
-        <DisplayInfo houses={mockHouses} setHouses={mockSetHouses} />);
-      expect(displayInfo.find('Connect').length).toEqual(1);
-      expect(displayInfo.find('img').length).toEqual(0);
-    });
-
     it('should display loading gif if there are no houses', () => {
       displayInfo = shallow(
-        <DisplayInfo houses={[]} setHouses={mockSetHouses} />);
+        <DisplayInfo 
+          houses={[]}
+          members={{}} 
+          setHouses={mockSetHouses}
+          setMembers={mockSetMembers} />);
 
       expect(displayInfo.find('img').length).toEqual(1);
-      expect(displayInfo.find('Connect').length).toEqual(0);
     });
   });
 

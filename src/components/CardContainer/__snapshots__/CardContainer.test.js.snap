@@ -26,15 +26,15 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Connect(Card)
+        <Connect(Component)
           house="array"
           index={0}
 />,
-        <Connect(Card)
+        <Connect(Component)
           house="of"
           index={1}
 />,
-        <Connect(Card)
+        <Connect(Component)
           house="houses"
           index={2}
 />,
@@ -89,15 +89,15 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Connect(Card)
+          <Connect(Component)
             house="array"
             index={0}
 />,
-          <Connect(Card)
+          <Connect(Component)
             house="of"
             index={1}
 />,
-          <Connect(Card)
+          <Connect(Component)
             house="houses"
             index={2}
 />,
