@@ -7,6 +7,7 @@ export const CardContainer = ({ houses }) => {
   const cards = houses.map((house, index) => 
     <Card 
       key={`card-${index}`}
+      index={index}
       house={house} />);
 
   return (

@@ -1,16 +1,19 @@
 import React from 'react';
 import './Card.css';
-import { fetchMembers, getMemberArray } from '../../helpers/apiCalls';
-import { setMembers } from '../../actions';
 import { connect } from 'react-redux';
 
-const Card = ({ house, setMembers }) => {
+const Card = ({ house, index, members }) => {
   const {name, founded, seats, titles, coatOfArms, ancestralWeapons, words} = house;
   const displayFounded = founded ? founded : 'N/A';
-  const swornMembers = getMemberArray(setMembers, house.name, house.swornMembers);
   
+  const displayMembers = (memberClass) => {
+    document.querySelector(`.${memberClass}`).classList.toggle('hide');
+  };
+  
+  const memberClass = `members-${index}`;
+
   return (
-    <div className="card">
+    <div className="card" onClick={() => displayMembers(memberClass)}>
       <h3>{name}</h3>
       <h4>{words}</h4>
       <h4>Founded: {displayFounded}</h4>
@@ -18,12 +21,13 @@ const Card = ({ house, setMembers }) => {
       <p>Titles: {titles}</p>
       <p>Ancestral Weapons: {ancestralWeapons}</p>
       <p>Coat of Arms: {coatOfArms}</p>
+      <p className={`${memberClass} hide`}>Members: {members[name].join(', ')}</p>
     </div>
   );
 };
 
-const mapDispatchToProps = dispatch => ({
-  setMembers: (houseMembers) => dispatch(setMembers(houseMembers))
+const mapStateToProps = state => ({
+  members: state.members
 });
 
-export default connect(null, mapDispatchToProps)(Card);
+export default connect(mapStateToProps, null)(Card);
