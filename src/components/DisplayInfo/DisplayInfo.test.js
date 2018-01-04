@@ -15,7 +15,8 @@ describe('DisplayInfo Container', () => {
     }));
 
     beforeEach(() => {
-      displayInfo = shallow(<DisplayInfo houses={mockHouses} setHouses={mockSetHouses} />);
+      displayInfo = shallow(
+        <DisplayInfo houses={mockHouses} setHouses={mockSetHouses} />);
     });
 
     it('should exist', () => {
@@ -27,13 +28,15 @@ describe('DisplayInfo Container', () => {
     });
 
     it('should display connected card container if there are houses', () => {
-      displayInfo = shallow(<DisplayInfo houses={mockHouses} setHouses={mockSetHouses} />);
+      displayInfo = shallow(
+        <DisplayInfo houses={mockHouses} setHouses={mockSetHouses} />);
       expect(displayInfo.find('Connect').length).toEqual(1);
       expect(displayInfo.find('img').length).toEqual(0);
     });
 
     it('should display loading gif if there are no houses', () => {
-      displayInfo = shallow(<DisplayInfo houses={[]} setHouses={mockSetHouses} />);
+      displayInfo = shallow(
+        <DisplayInfo houses={[]} setHouses={mockSetHouses} />);
 
       expect(displayInfo.find('img').length).toEqual(1);
       expect(displayInfo.find('Connect').length).toEqual(0);
