@@ -3,7 +3,7 @@ import './Card.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-const Card = ({ house, index, members }) => {
+export const Card = ({ house, index, members }) => {
   const {
     name, 
     founded, 
@@ -38,7 +38,7 @@ const Card = ({ house, index, members }) => {
   );
 };
 
-const mapStateToProps = state => ({
+export const mapStateToProps = state => ({
   members: state.members
 });
 

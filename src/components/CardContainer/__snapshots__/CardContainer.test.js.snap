@@ -28,12 +28,15 @@ ShallowWrapper {
       "children": Array [
         <Connect(Card)
           house="array"
+          index={0}
 />,
         <Connect(Card)
           house="of"
+          index={1}
 />,
         <Connect(Card)
           house="houses"
+          index={2}
 />,
       ],
       "className": "card-container",
@@ -46,6 +49,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "house": "array",
+          "index": 0,
         },
         "ref": null,
         "rendered": null,
@@ -57,6 +61,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "house": "of",
+          "index": 1,
         },
         "ref": null,
         "rendered": null,
@@ -68,6 +73,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "house": "houses",
+          "index": 2,
         },
         "ref": null,
         "rendered": null,
@@ -85,12 +91,15 @@ ShallowWrapper {
         "children": Array [
           <Connect(Card)
             house="array"
+            index={0}
 />,
           <Connect(Card)
             house="of"
+            index={1}
 />,
           <Connect(Card)
             house="houses"
+            index={2}
 />,
         ],
         "className": "card-container",
@@ -103,6 +112,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "house": "array",
+            "index": 0,
           },
           "ref": null,
           "rendered": null,
@@ -114,6 +124,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "house": "of",
+            "index": 1,
           },
           "ref": null,
           "rendered": null,
@@ -125,6 +136,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "house": "houses",
+            "index": 2,
           },
           "ref": null,
           "rendered": null,
