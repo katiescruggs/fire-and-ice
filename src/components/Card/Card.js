@@ -4,10 +4,11 @@ import { fetchMembers } from '../../helpers/apiCalls';
 
 const Card = ({ house }) => {
   const {name, founded, seats, titles, coatOfArms, ancestralWeapons, words} = house;
-
   const displayFounded = founded ? founded : 'N/A';
-
   const swornMembers = fetchMembers(house.swornMembers);
+  
+  console.log(swornMembers)
+  // const members = swornMembers.join('')
 
   return (
     <div className="card">

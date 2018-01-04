@@ -9,7 +9,7 @@ export const fetchMembers = async (membersArray) => {
   });
 
   const allMembers = await Promise.all(memberPromises);
-  console.log(allMembers);
+  return allMembers;
 };
 
 export const fetchMember = async (url) => {
