@@ -4,7 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
 import { fetchHouses } from '../../helpers/apiCalls';
-import { fakeAction, setHouses } from '../../actions';
+import { setHouses } from '../../actions';
 import CardContainer from '../CardContainer/CardContainer';
 class App extends Component {
 
@@ -19,10 +19,6 @@ class App extends Component {
         <div className='App-header'>
           <img src={logo} className='App-logo' alt='logo' />
           <h2>Welcome to Westeros</h2>
-          <button onClick={() => {
-            this.props.fakeAction();
-            alert(this.props.fake);
-          }}> FAKE ACTION</button>
         </div>
         <div className='Display-info'>
           
@@ -45,9 +41,8 @@ App.propTypes = {
   fakeAction: func.isRequired
 };
 
-const mapStateToProps = ({ fake, houses }) => ({ fake, houses });
+const mapStateToProps = ({ houses }) => ({ houses });
 const mapDispatchToProps = dispatch => ({ 
-  fakeAction: () => dispatch(fakeAction()),
   setHouses: (houses) => dispatch(setHouses(houses))
 });
 export default connect(mapStateToProps, mapDispatchToProps)(App);
