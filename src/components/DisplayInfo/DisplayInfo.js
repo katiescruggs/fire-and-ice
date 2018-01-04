@@ -22,7 +22,7 @@ export class DisplayInfo extends Component {
       <div className='Display-info'>
             
         {(memberLength === 0 || memberLength < houses.length) && 
-          <img src='../../wolf.gif' />
+          <img id='wolf' src='../../wolf.gif' alt='running wolf gif'/>
         }
 
         {(houses.length === memberLength) &&

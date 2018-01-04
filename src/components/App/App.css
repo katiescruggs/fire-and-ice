@@ -43,18 +43,3 @@
   font: white;
   border-radius: 10px;
 }
-
-.Container {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.Card {
-  border-radius: 10px;
-  border-color: black;
-  border-style: solid;
-  margin: 10px;
-  padding: 5px;
-  flex-grow: 1;
-  width: 300px;
-}
