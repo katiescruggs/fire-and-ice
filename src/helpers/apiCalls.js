@@ -1,9 +1,10 @@
 export const fetchHouses = async () => {
   const housesFetch = await fetch('http://localhost:3001/api/v1/houses');
-  return await housesFetch.json();
+  return housesFetch.json();
 };
 
 export const getMemberArray = async (setMembers, houseName, swornMembers) => {
+  console.log('getMemberArray');
   const members = await fetchMembers(swornMembers);
   const houseMembers = {
     [houseName]: members

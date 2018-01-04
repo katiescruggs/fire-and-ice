@@ -4,13 +4,21 @@ import { fetchMembers, getMemberArray } from '../../helpers/apiCalls';
 import { setMembers } from '../../actions';
 import { connect } from 'react-redux';
 
-const Card = ({ house, setMembers }) => {
+const Card = ({ house, setMembers, houses, members }) => {
   const {name, founded, seats, titles, coatOfArms, ancestralWeapons, words} = house;
   const displayFounded = founded ? founded : 'N/A';
-  const swornMembers = getMemberArray(setMembers, house.name, house.swornMembers);
+  // const swornMembers = getMemberArray(setMembers, house.name, house.swornMembers);
   
+  const displayMembers = () => {
+    console.log('displayMembers click');
+    console.log(members);
+    // const houseMembers =  members[name].join('');
+    // console.log(houseMembers);
+  }
+
+
   return (
-    <div className="card">
+    <div className="card" onClick={displayMembers}>
       <h3>{name}</h3>
       <h4>{words}</h4>
       <h4>Founded: {displayFounded}</h4>
@@ -18,9 +26,15 @@ const Card = ({ house, setMembers }) => {
       <p>Titles: {titles}</p>
       <p>Ancestral Weapons: {ancestralWeapons}</p>
       <p>Coat of Arms: {coatOfArms}</p>
+      <p>Members: {displayMembers}</p>
     </div>
   );
 };
+
+const mapStateToProps = state => ({
+  houses: state.houses,
+  members: state.members
+});
 
 const mapDispatchToProps = dispatch => ({
   setMembers: (houseMembers) => dispatch(setMembers(houseMembers))

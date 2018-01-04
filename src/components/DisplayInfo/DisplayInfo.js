@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchHouses } from '../../helpers/apiCalls';
-import { setHouses } from '../../actions';
+import { fetchHouses, getMemberArray } from '../../helpers/apiCalls';
+import { setHouses, setMembers } from '../../actions';
 import CardContainer from '../CardContainer/CardContainer';
 import PropTypes, { shape, func, string } from 'prop-types';
 
@@ -9,6 +9,10 @@ export class DisplayInfo extends Component {
   async componentDidMount() {
     const houses = await fetchHouses();
     this.props.setHouses(houses);
+
+    houses.forEach(house => {
+      getMemberArray(this.props.setMembers, house.name, house.swornMembers);
+    });
   }
 
   render() {
@@ -30,7 +34,8 @@ export class DisplayInfo extends Component {
 
 export const mapStateToProps = ({ houses }) => ({ houses });
 export const mapDispatchToProps = dispatch => ({ 
-  setHouses: (houses) => dispatch(setHouses(houses))
+  setHouses: (houses) => dispatch(setHouses(houses)),
+  setMembers: (houseMembers) => dispatch(setMembers(houseMembers))
 });
 
 DisplayInfo.propTypes = {
