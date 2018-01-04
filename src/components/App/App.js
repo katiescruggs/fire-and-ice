@@ -6,6 +6,13 @@ import { connect } from 'react-redux';
 import { fakeAction } from '../../actions';
 class App extends Component {
 
+  async componentDidMount() {
+    const initialFetch = await fetch('http://localhost:3001/api/v1/houses');
+    const data = await initialFetch.json();
+
+    console.log(data);
+  }
+
   render() {
     return (
       <div className='App'>
