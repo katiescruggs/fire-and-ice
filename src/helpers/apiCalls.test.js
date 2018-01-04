@@ -5,11 +5,15 @@ describe('apiCalls', () => {
     const houseData = ['i', 'am', 'house', 'data'];
 
     window.fetch = jest.fn().mockImplementation(() => Promise.resolve({
-      json: () => Promise.resolve({houseData: houseData})
+      json: () => Promise.resolve(houseData)
     }));
 
     it('is a function', () => {
       expect(fetchHouses).toBeAFunction;
+    });
+
+    it.skip('returns house data', () => {
+      expect(fetchHouses()).toEqual(houseData);
     });
   });
 
