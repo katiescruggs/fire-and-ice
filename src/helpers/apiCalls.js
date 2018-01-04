@@ -4,7 +4,6 @@ export const fetchHouses = async () => {
 };
 
 export const getMemberArray = async (setMembers, houseName, swornMembers) => {
-  console.log('getMemberArray');
   const members = await fetchMembers(swornMembers);
   const houseMembers = {
     [houseName]: members
