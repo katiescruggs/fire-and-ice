@@ -3,8 +3,11 @@ import Card from '../Card/Card';
 import { connect } from 'react-redux';
 import './CardContainer.css';
 
-const CardContainer = ({ houses }) => {
-  const cards = houses.map(house => <Card house={house} />);
+export const CardContainer = ({ houses }) => {
+  const cards = houses.map((house, index) => 
+    <Card 
+      key={`card-${index}`}
+      house={house} />);
 
   return (
     <div className="card-container">
@@ -13,7 +16,7 @@ const CardContainer = ({ houses }) => {
   );
 }
 
-const mapStateToProps = ({ houses }) => ({
+export const mapStateToProps = ({ houses }) => ({
   houses
 });
 
