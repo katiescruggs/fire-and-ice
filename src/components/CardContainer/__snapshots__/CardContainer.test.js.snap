@@ -26,14 +26,17 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Connect(Card)
+        <Connect(Component)
           house="array"
+          index={0}
 />,
-        <Connect(Card)
+        <Connect(Component)
           house="of"
+          index={1}
 />,
-        <Connect(Card)
+        <Connect(Component)
           house="houses"
+          index={2}
 />,
       ],
       "className": "card-container",
@@ -46,6 +49,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "house": "array",
+          "index": 0,
         },
         "ref": null,
         "rendered": null,
@@ -57,6 +61,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "house": "of",
+          "index": 1,
         },
         "ref": null,
         "rendered": null,
@@ -68,6 +73,7 @@ ShallowWrapper {
         "nodeType": "class",
         "props": Object {
           "house": "houses",
+          "index": 2,
         },
         "ref": null,
         "rendered": null,
@@ -83,14 +89,17 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Connect(Card)
+          <Connect(Component)
             house="array"
+            index={0}
 />,
-          <Connect(Card)
+          <Connect(Component)
             house="of"
+            index={1}
 />,
-          <Connect(Card)
+          <Connect(Component)
             house="houses"
+            index={2}
 />,
         ],
         "className": "card-container",
@@ -103,6 +112,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "house": "array",
+            "index": 0,
           },
           "ref": null,
           "rendered": null,
@@ -114,6 +124,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "house": "of",
+            "index": 1,
           },
           "ref": null,
           "rendered": null,
@@ -125,6 +136,7 @@ ShallowWrapper {
           "nodeType": "class",
           "props": Object {
             "house": "houses",
+            "index": 2,
           },
           "ref": null,
           "rendered": null,

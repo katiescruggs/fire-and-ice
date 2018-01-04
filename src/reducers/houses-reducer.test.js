@@ -11,7 +11,8 @@ describe('housesReducer', () => {
 
   it('should return houses when setHouses action is dispatched', () => {
     const houseArray = ['an', 'array', 'of', 'houses'];
+    const action = actions.setHouses(houseArray);
     
-    expect(houses(undefined, actions.setHouses(houseArray))).toEqual(houseArray);
+    expect(houses(undefined, action)).toEqual(houseArray);
   });
 });

@@ -13,7 +13,24 @@ ShallowWrapper {
             "houses",
           ]
     }
+    members={
+        Object {
+            "membersOne": Array [
+              "array",
+              "of",
+              "member",
+              "names",
+            ],
+            "membersTwo": Array [
+              "array",
+              "of",
+              "member",
+              "names",
+            ],
+          }
+    }
     setHouses={[Function]}
+    setMembers={[Function]}
 />,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
@@ -28,23 +45,27 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
+        <img
+          src="../../wolf.gif"
+/>,
         false,
-        <Connect(Component) />,
       ],
       "className": "Display-info",
     },
     "ref": null,
     "rendered": Array [
-      false,
       Object {
         "instance": null,
         "key": undefined,
-        "nodeType": "class",
-        "props": Object {},
+        "nodeType": "host",
+        "props": Object {
+          "src": "../../wolf.gif",
+        },
         "ref": null,
         "rendered": null,
-        "type": [Function],
+        "type": "img",
       },
+      false,
     ],
     "type": "div",
   },
@@ -55,23 +76,27 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
+          <img
+            src="../../wolf.gif"
+/>,
           false,
-          <Connect(Component) />,
         ],
         "className": "Display-info",
       },
       "ref": null,
       "rendered": Array [
-        false,
         Object {
           "instance": null,
           "key": undefined,
-          "nodeType": "class",
-          "props": Object {},
+          "nodeType": "host",
+          "props": Object {
+            "src": "../../wolf.gif",
+          },
           "ref": null,
           "rendered": null,
-          "type": [Function],
+          "type": "img",
         },
+        false,
       ],
       "type": "div",
     },
