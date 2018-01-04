@@ -4,8 +4,8 @@ export const fetchHouses = async () => {
 };
 
 export const fetchMembers = async (membersArray) => {
-  const memberPromises = membersArray.map(url => {
-    return fetchMember(url);
+  const memberPromises = membersArray.map(async (url) => {
+    return await fetchMember(url);
   });
 
   const allMembers = await Promise.all(memberPromises);
@@ -13,7 +13,6 @@ export const fetchMembers = async (membersArray) => {
 };
 
 export const fetchMember = async (url) => {
-
   const memberFetch = await fetch('http://localhost:3001/api/v1/character', {
     method: 'POST',
     headers: {
