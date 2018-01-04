@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import { fetchHouses } from '../../helpers/apiCalls';
 import { setHouses } from '../../actions';
 import CardContainer from '../CardContainer/CardContainer';
+import PropTypes, { shape, func, string } from 'prop-types';
 
-class DisplayInfo extends Component {
+export class DisplayInfo extends Component {
   async componentDidMount() {
     const houses = await fetchHouses();
     this.props.setHouses(houses);
@@ -27,9 +28,13 @@ class DisplayInfo extends Component {
   }
 }
 
-const mapStateToProps = ({ houses }) => ({ houses });
-const mapDispatchToProps = dispatch => ({ 
+export const mapStateToProps = ({ houses }) => ({ houses });
+export const mapDispatchToProps = dispatch => ({ 
   setHouses: (houses) => dispatch(setHouses(houses))
 });
+
+DisplayInfo.propTypes = {
+
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(DisplayInfo);
