@@ -1,10 +1,13 @@
 import React from 'react';
 import './Card.css';
+import { fetchMembers } from '../../helpers/apiCalls';
 
 const Card = ({ house }) => {
   const {name, founded, seats, titles, coatOfArms, ancestralWeapons, words} = house;
 
   const displayFounded = founded ? founded : 'N/A';
+
+  const swornMembers = fetchMembers(house.swornMembers);
 
   return (
     <div className="card">
