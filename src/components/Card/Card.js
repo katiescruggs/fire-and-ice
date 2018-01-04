@@ -8,13 +8,11 @@ const Card = ({ house, setMembers, houses, members }) => {
   const {name, founded, seats, titles, coatOfArms, ancestralWeapons, words} = house;
   const displayFounded = founded ? founded : 'N/A';
   // const swornMembers = getMemberArray(setMembers, house.name, house.swornMembers);
-  
-  const displayMembers = () => {
-    console.log('displayMembers click');
-    console.log(members);
-    // const houseMembers =  members[name].join('');
-    // console.log(houseMembers);
-  }
+  console.log(name);
+
+  console.log(members[name]);
+
+  const displayMembers = members[name].join(', ');
 
 
   return (
@@ -40,4 +38,4 @@ const mapDispatchToProps = dispatch => ({
   setMembers: (houseMembers) => dispatch(setMembers(houseMembers))
 });
 
-export default connect(null, mapDispatchToProps)(Card);
+export default connect(mapStateToProps, mapDispatchToProps)(Card);
