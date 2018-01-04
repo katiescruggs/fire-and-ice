@@ -1,4 +1,8 @@
-import {fetchHouses, getMemberArray, fetchMembers, fetchMember} from './apiCalls';
+import {
+  fetchHouses, 
+  getMemberArray, 
+  fetchMembers, 
+  fetchMember} from './apiCalls';
 
 describe('apiCalls', () => {
   describe('fetchHouses', () => {
