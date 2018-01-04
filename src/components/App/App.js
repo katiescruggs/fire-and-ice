@@ -3,14 +3,12 @@ import PropTypes, { shape, func, string } from 'prop-types';
 import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
+import { fetchHouses } from '../../helpers/apiCalls';
 import { fakeAction, setHouses } from '../../actions';
 class App extends Component {
 
   async componentDidMount() {
-    const housesFetch = await fetch('http://localhost:3001/api/v1/houses');
-    const houses = await housesFetch.json();
-
-    console.log(houses);
+    const houses = await fetchHouses();
     this.props.setHouses(houses);
   }
 
