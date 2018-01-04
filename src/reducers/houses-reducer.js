@@ -1,5 +1,5 @@
 export const houses = (state = [], action) => {
-  switch(action.type) {
+  switch (action.type) {
   case 'SET_HOUSES':
     return [...state, ...action.houses];
   default:

@@ -1,5 +1,5 @@
 export const members = (state = {}, action) => {
-  switch(action.type) {
+  switch (action.type) {
   case 'SET_MEMBERS':
     return {...state, ...action.houseMembers};
   default:
