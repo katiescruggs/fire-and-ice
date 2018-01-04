@@ -16,7 +16,7 @@ export const CardContainer = ({ houses }) => {
   );
 }
 
-const mapStateToProps = ({ houses }) => ({
+export const mapStateToProps = ({ houses }) => ({
   houses
 });
 
