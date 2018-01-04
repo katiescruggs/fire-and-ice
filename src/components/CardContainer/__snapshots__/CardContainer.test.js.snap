@@ -26,13 +26,13 @@ ShallowWrapper {
     "nodeType": "host",
     "props": Object {
       "children": Array [
-        <Card
+        <Connect(Card)
           house="array"
 />,
-        <Card
+        <Connect(Card)
           house="of"
 />,
-        <Card
+        <Connect(Card)
           house="houses"
 />,
       ],
@@ -43,7 +43,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": "card-0",
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
           "house": "array",
         },
@@ -54,7 +54,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": "card-1",
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
           "house": "of",
         },
@@ -65,7 +65,7 @@ ShallowWrapper {
       Object {
         "instance": null,
         "key": "card-2",
-        "nodeType": "function",
+        "nodeType": "class",
         "props": Object {
           "house": "houses",
         },
@@ -83,13 +83,13 @@ ShallowWrapper {
       "nodeType": "host",
       "props": Object {
         "children": Array [
-          <Card
+          <Connect(Card)
             house="array"
 />,
-          <Card
+          <Connect(Card)
             house="of"
 />,
-          <Card
+          <Connect(Card)
             house="houses"
 />,
         ],
@@ -100,7 +100,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": "card-0",
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "house": "array",
           },
@@ -111,7 +111,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": "card-1",
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "house": "of",
           },
@@ -122,7 +122,7 @@ ShallowWrapper {
         Object {
           "instance": null,
           "key": "card-2",
-          "nodeType": "function",
+          "nodeType": "class",
           "props": Object {
             "house": "houses",
           },

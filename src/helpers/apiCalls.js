@@ -3,6 +3,14 @@ export const fetchHouses = async () => {
   return await housesFetch.json();
 };
 
+export const getMemberArray = async (setMembers, houseName, swornMembers) => {
+  const members = await fetchMembers(swornMembers);
+  const houseMembers = {
+    [houseName]: members
+  };
+  setMembers(houseMembers);
+};
+
 export const fetchMembers = async (membersArray) => {
   const memberPromises = membersArray.map(async (url) => {
     return await fetchMember(url);

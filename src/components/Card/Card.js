@@ -1,17 +1,13 @@
 import React from 'react';
 import './Card.css';
-import { fetchMembers } from '../../helpers/apiCalls';
+import { fetchMembers, getMemberArray } from '../../helpers/apiCalls';
+import { setMembers } from '../../actions';
+import { connect } from 'react-redux';
 
-const getMemberArray = async (swornMembers) => {
-  const members = await fetchMembers(swornMembers);
-  console.log(members);
-}
-
-
-const Card = ({ house }) => {
+const Card = ({ house, setMembers }) => {
   const {name, founded, seats, titles, coatOfArms, ancestralWeapons, words} = house;
   const displayFounded = founded ? founded : 'N/A';
-  const swornMembers = getMemberArray(house.swornMembers);
+  const swornMembers = getMemberArray(setMembers, house.name, house.swornMembers);
   
   return (
     <div className="card">
@@ -24,6 +20,10 @@ const Card = ({ house }) => {
       <p>Coat of Arms: {coatOfArms}</p>
     </div>
   );
-}
+};
 
-export default Card;
+const mapDispatchToProps = dispatch => ({
+  setMembers: (houseMembers) => dispatch(setMembers(houseMembers))
+});
+
+export default connect(null, mapDispatchToProps)(Card);
