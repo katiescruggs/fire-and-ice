@@ -2,5 +2,17 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
-  width: 1050px;
+  width: 1032px;
+}
+
+@media screen and (max-width: 1180px) {
+  .card-container {
+    width: 688px;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .card-container {
+    width: 344px;
+  }
 }

@@ -25,8 +25,8 @@ export const Card = ({ house, index, members }) => {
   return (
     <div className="card" onClick={() => displayMembers(memberClass)}>
       <h3>{name}</h3>
-      <h4>{words}</h4>
-      <h4>Founded: {displayFounded}</h4>
+      <h4 className="words">{words}</h4>
+      <h4 className="founded">Founded: {displayFounded}</h4>
       <p>Seats: {seats}</p>
       <p>Titles: {titles}</p>
       <p>Ancestral Weapons: {ancestralWeapons}</p>
