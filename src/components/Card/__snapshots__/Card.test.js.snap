@@ -54,10 +54,14 @@ ShallowWrapper {
         <h3>
           NAME
 </h3>,
-        <h4>
+        <h4
+          className="words"
+>
           WORDS
 </h4>,
-        <h4>
+        <h4
+          className="founded"
+>
           Founded: 
           FOUNDED
 </h4>,
@@ -106,6 +110,7 @@ ShallowWrapper {
         "nodeType": "host",
         "props": Object {
           "children": "WORDS",
+          "className": "words",
         },
         "ref": null,
         "rendered": "WORDS",
@@ -120,6 +125,7 @@ ShallowWrapper {
             "Founded: ",
             "FOUNDED",
           ],
+          "className": "founded",
         },
         "ref": null,
         "rendered": Array [
@@ -227,10 +233,14 @@ ShallowWrapper {
           <h3>
             NAME
 </h3>,
-          <h4>
+          <h4
+            className="words"
+>
             WORDS
 </h4>,
-          <h4>
+          <h4
+            className="founded"
+>
             Founded: 
             FOUNDED
 </h4>,
@@ -279,6 +289,7 @@ ShallowWrapper {
           "nodeType": "host",
           "props": Object {
             "children": "WORDS",
+            "className": "words",
           },
           "ref": null,
           "rendered": "WORDS",
@@ -293,6 +304,7 @@ ShallowWrapper {
               "Founded: ",
               "FOUNDED",
             ],
+            "className": "founded",
           },
           "ref": null,
           "rendered": Array [

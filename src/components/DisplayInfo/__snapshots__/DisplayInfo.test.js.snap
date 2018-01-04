@@ -46,6 +46,8 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         <img
+          alt="running wolf gif"
+          id="wolf"
           src="../../wolf.gif"
 />,
         false,
@@ -59,6 +61,8 @@ ShallowWrapper {
         "key": undefined,
         "nodeType": "host",
         "props": Object {
+          "alt": "running wolf gif",
+          "id": "wolf",
           "src": "../../wolf.gif",
         },
         "ref": null,
@@ -77,6 +81,8 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           <img
+            alt="running wolf gif"
+            id="wolf"
             src="../../wolf.gif"
 />,
           false,
@@ -90,6 +96,8 @@ ShallowWrapper {
           "key": undefined,
           "nodeType": "host",
           "props": Object {
+            "alt": "running wolf gif",
+            "id": "wolf",
             "src": "../../wolf.gif",
           },
           "ref": null,
