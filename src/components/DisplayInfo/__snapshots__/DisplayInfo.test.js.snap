@@ -29,7 +29,7 @@ ShallowWrapper {
     "props": Object {
       "children": Array [
         false,
-        <Connect(CardContainer) />,
+        <Connect(Component) />,
       ],
       "className": "Display-info",
     },
@@ -56,7 +56,7 @@ ShallowWrapper {
       "props": Object {
         "children": Array [
           false,
-          <Connect(CardContainer) />,
+          <Connect(Component) />,
         ],
         "className": "Display-info",
       },
