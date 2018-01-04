@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchHouses, getMemberArray } from '../../helpers/apiCalls';
 import { setHouses, setMembers } from '../../actions';
 import CardContainer from '../CardContainer/CardContainer';
-import PropTypes, { shape, func, string } from 'prop-types';
+import PropTypes from 'prop-types';
 
 export class DisplayInfo extends Component {
   async componentDidMount() {
@@ -21,16 +21,16 @@ export class DisplayInfo extends Component {
     return (
       <div className='Display-info'>
             
-          {(memberLength === 0 || memberLength < houses.length) && 
-            <img src='../../wolf.gif' />
-          }
+        {(memberLength === 0 || memberLength < houses.length) && 
+          <img src='../../wolf.gif' />
+        }
 
-          {(houses.length === memberLength) &&
-            <CardContainer />
-          }
+        {(houses.length === memberLength) &&
+          <CardContainer />
+        }
           
       </div>
-      );
+    );
   }
 }
 
@@ -45,7 +45,10 @@ export const mapDispatchToProps = dispatch => ({
 });
 
 DisplayInfo.propTypes = {
-
+  setHouses: PropTypes.func,
+  setMembers: PropTypes.func,
+  houses: PropTypes.array,
+  members: PropTypes.object
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(DisplayInfo);

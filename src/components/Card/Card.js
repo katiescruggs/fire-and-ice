@@ -1,9 +1,19 @@
 import React from 'react';
 import './Card.css';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 const Card = ({ house, index, members }) => {
-  const {name, founded, seats, titles, coatOfArms, ancestralWeapons, words} = house;
+  const {
+    name, 
+    founded, 
+    seats, 
+    titles, 
+    coatOfArms, 
+    ancestralWeapons, 
+    words
+  } = house;
+
   const displayFounded = founded ? founded : 'N/A';
   
   const displayMembers = (memberClass) => {
@@ -21,7 +31,9 @@ const Card = ({ house, index, members }) => {
       <p>Titles: {titles}</p>
       <p>Ancestral Weapons: {ancestralWeapons}</p>
       <p>Coat of Arms: {coatOfArms}</p>
-      <p className={`${memberClass} hide`}>Members: {members[name].join(', ')}</p>
+      <p className={`${memberClass} hide`}>
+        Members: {members[name].join(', ')}
+      </p>
     </div>
   );
 };
@@ -29,5 +41,11 @@ const Card = ({ house, index, members }) => {
 const mapStateToProps = state => ({
   members: state.members
 });
+
+Card.propTypes = {
+  house: PropTypes.object,
+  index: PropTypes.number,
+  members: PropTypes.object
+};
 
 export default connect(mapStateToProps, null)(Card);
